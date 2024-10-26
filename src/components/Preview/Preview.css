@@ -1,0 +1,67 @@
+/* Preview.css */
+.Preview {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.container {
+    flex: 1; /* Allow the container to grow and fill space */
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px; /* Adjust as needed */
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-10 {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.card {
+    border: 1px solid #ccc; /* Add some border for visibility */
+    padding: 10px;
+    text-align: center;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.icon {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+}
+
+/* Footer specific styles */
+.footer {
+    position: relative;
+    background-color: #f8f8f8; /* Change as necessary */
+    padding: 10px;
+    margin-top: 20px; /* Add space above footer */
+}

@@ -1,0 +1,41 @@
+.app-container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+body {
+  margin: 0;
+  /* Remove default margin */
+}
+
+@media (min-width: 768px) {
+  body {
+    overflow: auto;
+    /* Allow scrolling on larger screens */
+  }
+}
+
+/* Sidebar styles */
+aside {
+  transition: width 0.3s ease;
+  /* Smooth transition for width changes */
+}
+
+aside.w-64 {
+  width: 250px;
+  /* Width when expanded on medium screens and up */
+}
+
+aside.w-48 {
+  width: 192px;
+  /* Width when expanded on small screens */
+}
+
+aside.w-16 {
+  width: 64px;
+  /* Width when collapsed */
+}
