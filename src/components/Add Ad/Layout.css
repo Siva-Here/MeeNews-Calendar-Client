@@ -1,191 +1,214 @@
 :root {
-    --primary-color: #9b59b6;
-    --primary-hover: #8e44ad;
-    --text-color: #333;
-    --background-color: #f0f0f0;
-  }
-  
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
-  .layout {
-    height: screen;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10%; /* Adjusted margin for better centering */
-    margin-top: 0%;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: 4px;
-    padding: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: var(--primary-hover);
-  }
-  
-  .grid {
-    display: grid;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
+  --primary-color: #9b59b6;
+  --primary-hover: #8e44ad;
+  --text-color: #333;
+  --background-color: #f0f0f0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden; /* Disables horizontal scrolling */
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10%; /* Adjusted margin for better centering */
+  margin-top: 0%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-10 {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.purple {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+}
+
+.ad-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-form input {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.month-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.month-selection label:first-of-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.month-selection label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem 0;
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 0 0 0.25rem 0;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
   .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
   }
-  
+
   .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
   }
-  
+
   .grid-10 {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 1fr;
   }
-  
-  .col-span-2 {
-    grid-column: span 2;
+
+  .layout {
+    overflow-y: scroll; /* Enables vertical scrolling on small screens */
   }
-  
-  .col-span-3 {
-    grid-column: span 3;
+
+  .card {
+    margin-bottom: 1rem;
   }
-  
-  .col-span-4 {
-    grid-column: span 4;
-  }
-  
-  .col-span-6 {
-    grid-column: span 6;
-  }
-  
-  .purple {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .icon {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.25rem;
-  }
-  
-  .ad-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal {
-    position: relative;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 4px;
-    max-width: 300px;
-    width: 100%;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .modal-form input {
-    padding: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .month-selection {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .month-selection label:first-of-type {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .month-selection label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  h2 {
-    font-size: 1rem;
-    margin: 0 0 0.25rem 0;
-  }
-  
-  p {
-    font-size: 0.8rem;
-    margin: 0 0 0.25rem 0;
-  }
-  
+}
