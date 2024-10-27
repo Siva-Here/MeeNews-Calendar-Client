@@ -114,7 +114,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="layout">
+    <div className="layout p-16 mb-[100px]">
       <div className="container">
         <h1 className="title">Choose Slot</h1>
 
@@ -160,7 +160,7 @@ const Layout = () => {
           </div>
         </div>
 
-        <div className="grid grid-10">
+        <div className="grid grid-10 mb-[500px]">
           <Card className="col-span-4">
             <NewspaperIcon className="icon" />
             <h2>Footer Ad 1</h2>
