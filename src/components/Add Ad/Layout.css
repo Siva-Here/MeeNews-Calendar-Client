@@ -12,16 +12,15 @@ body, html {
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  overflow: hidden; /* Disables horizontal scrolling */
+  overflow-y: hidden; /* Prevent default scrolling */
 }
 
 .layout {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Enables vertical scrolling */
 }
 
 .container {
@@ -29,8 +28,10 @@ body, html {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 10%; /* Adjusted margin for better centering */
-  margin-top: 0%;
+  margin-bottom: 10%;
+  margin-top: 0;
+  max-height: 90vh; /* Limit the height of the container */
+  overflow-y: auto; /* Enable scrolling within the container */
 }
 
 .title {
@@ -190,25 +191,23 @@ p {
   margin: 0 0 0.25rem 0;
 }
 
-/* Small screen adjustments */
+/* Media Queries */
 @media (max-width: 768px) {
-  .grid-3 {
-    grid-template-columns: 1fr;
+  /* Applies to small screens */
+  body, html {
+    overflow-y: auto; /* Enable vertical scrolling */
   }
 
-  .grid-4 {
-    grid-template-columns: 1fr;
+  .container {
+    height: 100vh; /* Full viewport height */
+    padding-bottom: 1rem; /* Adds space at the bottom for last elements */
   }
+}
 
-  .grid-10 {
-    grid-template-columns: 1fr;
-  }
-
-  .layout {
-    overflow-y: scroll; /* Enables vertical scrolling on small screens */
-  }
-
-  .card {
-    margin-bottom: 1rem;
+@media (min-width: 769px) {
+  /* For medium screens and larger */
+  .container {
+    height: auto; /* Disables forced height */
+    overflow-y: hidden; /* No scrolling needed */
   }
 }
