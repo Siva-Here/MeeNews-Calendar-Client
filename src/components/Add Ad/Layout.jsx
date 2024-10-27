@@ -115,7 +115,7 @@ const Layout = () => {
 
   return (
     <>
-      <h1 className="title">Choose Slot</h1>
+      {/* <h1 className="title">Choose Slot</h1> */}
       <div className="layout">
         <div className="container">
 
