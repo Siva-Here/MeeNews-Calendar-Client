@@ -16,10 +16,11 @@
   }
   
   .layout {
+    margin-top: 0px;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers the container vertically */
+    justify-content:center; /* Centers the container vertically */
     align-items: center;
     padding: 2rem 0; /* Adds space at the top and bottom */
   }
@@ -35,6 +36,7 @@
   }
   
   .title {
+    margin-top: 0%;
       font-size: 1.5rem;
       font-weight: bold;
       text-align: center;
