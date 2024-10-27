@@ -39,8 +39,13 @@ export default function Sidebar({ children }) {
 
                     <div className="border-t flex p-3 mb-[800px] border-b">
                         <img src="/meeNews.png" className="w-auto h-5 rounded-md" />
-                        <div className={`flex justify-between items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>
-                            <div className="ms-auto"  onClick={handleLogOut}> 
+                        {/* <div className={`flex justify-between items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>
+                            <div className="ms-auto cursor-pointer"  onClick={handleLogOut}> 
+                                <LogOut />
+                            </div>
+                        </div> */}
+                        <div className={`flex items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"}`}>
+                            <div className="ms-auto cursor-pointer" onClick={handleLogOut}>
                                 <LogOut />
                             </div>
                         </div>
