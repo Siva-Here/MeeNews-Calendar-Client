@@ -16,32 +16,26 @@
   }
   
   .layout {
-    margin-top: 0px;
-    height: 100vh;
+    height: screen;
     display: flex;
     flex-direction: column;
-    justify-content:center; /* Centers the container vertically */
+    justify-content: center;
     align-items: center;
-    padding: 2rem 0; /* Adds space at the top and bottom */
   }
   
   .container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* max-width: 1200px; */
     width: 100%;
-    margin: 0 1rem; /* Ensures a margin on the sides */
-    margin-bottom: 20%;
+    margin-bottom: 10%; /* Adjusted margin for better centering */
+    margin-top: 0%;
   }
   
   .title {
-    margin-top: 0%;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      color: white;
-      margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
   }
   
   .card {
