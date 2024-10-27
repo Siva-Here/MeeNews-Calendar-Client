@@ -73,10 +73,9 @@ const Preview = () => {
   return (
     <div className="Preview">
       <div className="container">
-        <h1 className="title">Choose Slot</h1>
+        <h1 className="title">Choose Month</h1>
 
         <div className="dropdown">
-          <label>Select Month: </label>
           <select onChange={(e) => setSelectedMonth(e.target.value)} value={selectedMonth}>
             {Object.keys(images).map((month) => (
               <option key={month} value={month}>
@@ -97,11 +96,9 @@ const Preview = () => {
 
         <div className="grid grid-10">
           <div className="card col-span-6">
-            <MegaphoneIcon className="icon" />
             <img src={images[selectedMonth][2]} alt="Ad Part 1" className="img-responsive object-cover" />
           </div>
           <div className="card col-span-4">
-            <MegaphoneIcon className="icon" />
             <img src={images[selectedMonth][2]} alt="Ad Part 2" className="img-responsive object-cover" />
           </div>
         </div>
@@ -123,15 +120,12 @@ const Preview = () => {
 
         <div className="grid grid-10 footer">
           <div className="card col-span-4">
-            <NewspaperIcon className="icon" />
             <img src={images[selectedMonth][0]} alt="Footer Ad 1" className="img-responsive object-cover" />
           </div>
-          <div className="card col-span-2">
-            <NewspaperIcon className="icon" />
+          <div className="card col-span-2 w-auto sm:w-18">
             <img src={images[selectedMonth][1]} alt="Footer Ad 2" className="img-responsive object-cover" />
           </div>
           <div className="card col-span-4">
-            <NewspaperIcon className="icon" />
             <img src={images[selectedMonth][2]} alt="Footer Ad 3" className="img-responsive object-cover" />
           </div>
         </div>

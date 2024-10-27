@@ -166,9 +166,9 @@ const Layout = () => {
             <h2>Footer Ad 1</h2>
             <Button onClick={() => openModal('Footer Ad 1')}><CircleFadingPlus /></Button>
           </Card>
-          <Card className="col-span-2">
+          <Card className="col-span-2 w-16 md:w-auto">
             <NewspaperIcon className="icon" />
-            <h2>Ad 2</h2>
+            <h2>Footer Ad 2</h2>
             <span className='text-xs'><Button onClick={() => openModal('Footer Ad 2')}><span className='text-center'><CircleFadingPlus /></span></Button></span>
           </Card>
           <Card className="col-span-4">
