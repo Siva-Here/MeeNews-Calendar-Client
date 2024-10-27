@@ -19,7 +19,7 @@ export default function Sidebar({ children }) {
     const navigate=useNavigate();
     const handleLogOut=()=>{
         localStorage.clear();
-        navigate("/login");
+        window.location.reload();
     }
 
     return (
