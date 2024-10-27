@@ -114,7 +114,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="layout p-16 mb-[100px]">
+    <div className="layout">
       <div className="container">
         <h1 className="title">Choose Slot</h1>
 

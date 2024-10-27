@@ -17,10 +17,11 @@
   
   .layout {
     height: 100vh;
-    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    /* background: linear-gradient(to bottom right, var(--primary-color), white); Uncomment to apply gradient */
+    justify-content: center; /* Centers the container vertically */
+    align-items: center;
+    padding: 2rem 0; /* Adds space at the top and bottom */
   }
   
   .container {
@@ -28,15 +29,16 @@
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 1rem; /* Ensures a margin on the sides */
   }
   
   .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      margin-bottom: 0.5rem;
   }
   
   .card {
