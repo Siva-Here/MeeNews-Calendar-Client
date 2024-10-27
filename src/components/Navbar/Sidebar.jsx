@@ -1,5 +1,6 @@
 import { ChevronFirst, ChevronLast, MoreVertical, LogOut } from "lucide-react";
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SidebarContext = createContext();
 
@@ -15,9 +16,10 @@ export default function Sidebar({ children }) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const navigate=useNavigate();
     const handleLogOut=()=>{
         localStorage.clear();
-        window.location.href = '/login';
+        navigate("/login");
     }
 
     return (
