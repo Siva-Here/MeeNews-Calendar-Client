@@ -211,3 +211,9 @@ p {
     overflow-y: hidden; /* No scrolling needed */
   }
 }
+
+@media (min-width: 315px) and (max-width: 640px) {
+  .responsive-div {
+    width: 100%; /* Adjust width as needed */
+  }
+}
