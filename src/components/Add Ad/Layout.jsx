@@ -115,9 +115,9 @@ const Layout = () => {
 
   return (
     <>
-      {/* <h1 className="title">Choose Slot</h1> */}
       <div className="layout">
         <div className="container">
+          <h1 className="title">Choose Slot</h1>
 
           <div className="grid grid-3">
             <Card className="col-span-2">
