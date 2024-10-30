@@ -121,8 +121,8 @@ const Layout = () => {
 
           <div className="grid grid-3">
             <Card className="col-span-2">
-              <h2>Header Left</h2>
-              <Button onClick={() => openModal('Header Left')}><CircleFadingPlus /></Button>
+              {/* <h2>Header Left</h2> */}
+              <img src="/header.png" alt="" className='h-auto w-auto'/>
             </Card>
             <Card>
               <h2>Header Right</h2>
@@ -145,7 +145,8 @@ const Layout = () => {
 
           <div className="grid grid-4">
             <Card className="col-span-3">
-              <h2><CalendarIcon className="icon" /> Calendar</h2>
+              {/* <h2><CalendarIcon className="icon" /> Calendar</h2> */}
+              <img src="/calendar.png" alt="" className='h-80 w-full'/>
               {/* <Button onClick={() => openModal('Calendar')}>Open</Button> */}
             </Card>
 
