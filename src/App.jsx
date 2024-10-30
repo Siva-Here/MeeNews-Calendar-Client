@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Statistics from './components/Home/Statistics';
 import Layout from './components/Add Ad/Layout';
 import Preview from './components/Preview/Preview';
+import Table from './components/Table/Table';
 
 function App() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);

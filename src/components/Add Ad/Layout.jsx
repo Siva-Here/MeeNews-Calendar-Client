@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MegaphoneIcon, CalendarIcon, NewspaperIcon, CircleFadingPlus } from 'lucide-react';
 import './Layout.css';
-
+import Table from '../Table/Table';
 const Card = ({ children, className }) => (
   <div className={`card ${className}`}>{children}</div>
 );
@@ -107,12 +107,12 @@ const ModalForm = ({ title, onClose }) => {
 const Layout = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
-
+  
   const openModal = (title) => {
     setModalTitle(title);
     setModalOpen(true);
   };
-
+  
   return (
     <>
       <div className="layout">
@@ -182,6 +182,7 @@ const Layout = () => {
           <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} title={modalTitle}>
             <ModalForm title={modalTitle} onClose={() => setModalOpen(false)} />
           </Modal>
+<         Table/>
         </div>
       </div>
     </>
