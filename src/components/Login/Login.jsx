@@ -42,7 +42,7 @@ const Login = () => {
         };
     
         try {
-            const response = await axios.post('https://api.meebuddy.com/news/dashboard/auth/login', formData, {
+            const response = await axios.post('http://localhost:8890/news/dashboard/auth/login', formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

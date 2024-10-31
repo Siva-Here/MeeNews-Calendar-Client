@@ -1,4 +1,3 @@
-// localStorageUtils.js
 export function saveState(state) {
     try {
         const serializedState = JSON.stringify(state);

@@ -31,8 +31,8 @@ body, html {
   width: 100%;
   margin-bottom: 10%;
   margin-top: 0;
-  max-height: 90vh; /* Limit the height of the container */
-  overflow-y: auto; /* Enable scrolling within the container */
+  max-height: 90vh; 
+  overflow-y: auto; 
 }
 
 .title {
@@ -192,16 +192,17 @@ p {
   margin: 0 0 0.25rem 0;
 }
 
-/* Media Queries */
+
+
 @media (max-width: 768px) {
-  /* Applies to small screens */
+  
   body, html {
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto; 
   }
 
   .container {
-    height: 100vh; /* Full viewport height */
-    padding-bottom: 1rem; /* Adds space at the bottom for last elements */
+    height: 100vh; 
+    padding-bottom: 1rem; 
   }
 
   .layout {
@@ -209,18 +210,25 @@ p {
     top:0%;
   }
 
+  .adSection1,.adSection2{
+    height: 175px;
+  }
+
 }
 
 @media (min-width: 769px) {
-  /* For medium screens and larger */
   .container {
-    height: auto; /* Disables forced height */
-    overflow-y: hidden; /* No scrolling needed */
+    height: auto; 
+    overflow-y: hidden; 
+  }
+
+  .adSection1,.adSection2{
+    height:740px;
   }
 }
 
 @media (min-width: 315px) and (max-width: 640px) {
   .responsive-div {
-    width: 100%; /* Adjust width as needed */
+    width: 100%; 
   }
 }

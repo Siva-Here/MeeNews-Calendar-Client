@@ -1,9 +1,9 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
-import { X } from 'lucide-react'
-
-const TableContent = () => (
+import React, { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchSlotReport } from '../../store/slices/SlotReportSlice';
+import LoadingAnimation from '../Add Ad/LoadingAnimation';
+const TableContent = ({ report }) => (
   <table className="w-full text-sm text-left text-gray-700">
     <thead className="text-xs uppercase bg-[#9b59b6] text-white">
       <tr>
@@ -23,28 +23,28 @@ const TableContent = () => (
       </tr>
     </thead>
     <tbody>
-      {[...Array(9)].map((_, rowIndex) => (
-        <tr key={rowIndex} className="bg-white border-b hover:bg-gray-50">
+      {report.map((item) => (
+        <tr key={item.positionId} className="bg-white border-b hover:bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap">
             <a href="#" className="font-medium text-[#9b59b6] hover:underline">
-              Ad {rowIndex + 1}
+              {item.positionName}
             </a>
           </td>
-          {[...Array(12)].map((_, colIndex) => (
+          {Object.keys(item.availability).map((month, colIndex) => (
             <td key={colIndex} className="px-6 py-4 whitespace-nowrap">
-              <a href="#" className="font-medium text-[#9b59b6] hover:underline">
-                Slot {rowIndex + 1}-{colIndex + 1}
-              </a>
+              <span className={`font-medium ${item.availability[month] ? 'text-green-600' : 'text-red-600'}`}>
+                {item.availability[month] ? 'Available' : 'Unavailable'}
+              </span>
             </td>
           ))}
         </tr>
       ))}
     </tbody>
   </table>
-)
+);
 
 const Modal = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
@@ -67,23 +67,29 @@ const Modal = ({ isOpen, onClose, children }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Table = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const dispatch = useDispatch();
+  const { report, loading, error } = useSelector(state => state.report); 
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640)
-    }
+      setIsMobile(window.innerWidth < 640);
+    };
 
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
 
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
+    // Fetch report when the component mounts
+    dispatch(fetchSlotReport('5ffde92b6563fd34c467ede5')); // Example mandalId
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, [dispatch]);
 
   return (
     <div>
@@ -91,23 +97,25 @@ const Table = () => {
         <>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-4 py-2 w-full bg-[#9b59b6] text-white rounded-md hover:bg-[#8e44ad] transition-colors mt-2"
+            disabled={loading} 
+            className={`px-4 py-2 w-full ${loading ? 'bg-white cursor-not-allowed text-[#9b59b6]' : 'bg-[#9b59b6] text-white hover:bg-[#8e44ad]'} rounded-md transition-colors mt-2`}
           >
-            Available Slots
+            {loading ? <LoadingAnimation/> : 'Available Slots for Mandal'}
           </button>
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
             <div className="overflow-x-auto">
-              <TableContent />
+              <TableContent report={report || []} />
             </div>
           </Modal>
         </>
       ) : (
         <div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-          <TableContent />
+          <TableContent report={report || []} />
         </div>
       )}
+      {error && <p>Error: {error.message || 'Server is Down .....'}</p>}
     </div>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

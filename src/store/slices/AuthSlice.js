@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isAuthenticated: Boolean(localStorage.getItem('jwtToken')), // Set based on token existence in localStorage
+  isAuthenticated: Boolean(localStorage.getItem('jwtToken')),
   jwtToken: localStorage.getItem('jwtToken') || null,
 };
 
