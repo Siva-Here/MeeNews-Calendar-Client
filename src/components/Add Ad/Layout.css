@@ -153,7 +153,7 @@ body, html {
 }
 
 .modal-form input {
-  padding: 0.25rem;
+  padding: 0.15rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -263,4 +263,51 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+
+.modal-form input[type="text"],
+.modal-form input[type="tel"],
+.modal-form input[type="file"] {
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+  margin: 10px 0; /* Margin between inputs */
+  width: 100%; /* Full width for inputs */
+  transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+.modal-form input[type="text"]:focus,
+.modal-form input[type="tel"]:focus {
+  border-color: #9b59b6; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.modal-form .level-selection,
+.modal-form .month-selection {
+  margin: 5px 0; /* Space between sections */
+}
+
+.modal-form .checkbox-group label {
+  display: block; /* Stack checkboxes vertically */
+  margin: 5px 0; /* Margin between checkboxes */
+}
+
+.modal-form button {
+  background-color: #9b59b6; /* Main button color */
+  color: white; /* Text color for button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for button */
+  transition: background-color 0.3s, opacity 0.3s; /* Smooth transitions */
+}
+
+.modal-form button:hover {
+  background-color: #8e44ad; /* Darker shade on hover */
+}
+
+.modal-form button:disabled {
+  background-color: #bd8dc1; /* Disabled button color */
+  cursor: not-allowed; /* Not-allowed cursor for disabled */
 }

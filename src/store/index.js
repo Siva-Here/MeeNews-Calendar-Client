@@ -23,9 +23,9 @@ const store = configureStore({
 store.subscribe(() => {
     saveState({
         auth: store.getState().auth,
-        positions:store.getState().positions,
-        report:store.getState().report,
-        add:store.getState().add
+        // positions:store.getState().positions,
+        // report:store.getState().report,
+        // add:store.getState().add
     });
 });
 

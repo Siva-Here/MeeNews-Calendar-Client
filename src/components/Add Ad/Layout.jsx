@@ -50,6 +50,7 @@ const Layout = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
   const [currentPositionId, setCurrentPositionId] = useState("");
+  const [currentPos, setcurrentPos] = useState("");
 
   useEffect(() => {
     if (status === "idle") {
@@ -57,9 +58,11 @@ const Layout = () => {
     }
   }, [dispatch]);
 
-  const openModal = (title, positionId) => {
+  const openModal = (title, positionId,posi) => {
     setModalTitle(title);
     setCurrentPositionId(positionId);
+    setcurrentPos(posi)
+    console.log({posi})
     setModalOpen(true);
   };
 
@@ -97,7 +100,9 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Header Right",
-                      positions.find((pos) => pos.name === "headerRight")?._id
+                      positions.find((pos) => pos.name === "headerRight")?._id,
+                      positions.find((pos) => pos.name === "headerRight")
+                      
                     )
                   }
                 >
@@ -125,7 +130,8 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Ad Part 1",
-                      positions.find((pos) => pos.name === "adPart1")?._id
+                      positions.find((pos) => pos.name === "adPart1")?._id,
+                      positions.find((pos) => pos.name === "adPart1")
                     )
                   }
                 >
@@ -150,7 +156,8 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Ad Part 2",
-                      positions.find((pos) => pos.name === "adPart2")?._id
+                      positions.find((pos) => pos.name === "adPart2")?._id,
+                      positions.find((pos) => pos.name === "adPart2")
                     )
                   }
                 >
@@ -189,7 +196,8 @@ const Layout = () => {
                           openModal(
                             "Ad Section 1",
                             positions.find((pos) => pos.name === "adSection1")
-                              ?._id
+                              ?._id,
+                              positions.find((pos) => pos.name === "adSection1")
                           )
                         }
                       >
@@ -219,7 +227,8 @@ const Layout = () => {
                           openModal(
                             "Ad Section 2",
                             positions.find((pos) => pos.name === "adSection2")
-                              ?._id
+                              ?._id,
+                              positions.find((pos) => pos.name === "adSection2")
                           )
                         }
                       >
@@ -250,7 +259,8 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Footer Ad 1",
-                      positions.find((pos) => pos.name === "footerAd1")?._id
+                      positions.find((pos) => pos.name === "footerAd1")?._id,
+                      positions.find((pos) => pos.name === "footerAd1")
                     )
                   }
                 >
@@ -276,7 +286,8 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Footer Ad 2",
-                      positions.find((pos) => pos.name === "footerAd2")?._id
+                      positions.find((pos) => pos.name === "footerAd2")?._id,
+                      positions.find((pos) => pos.name === "footerAd2")
                     )
                   }
                 >
@@ -302,7 +313,8 @@ const Layout = () => {
                   onClick={() =>
                     openModal(
                       "Footer Ad 3",
-                      positions.find((pos) => pos.name === "footerAd3")?._id
+                      positions.find((pos) => pos.name === "footerAd3")?._id,
+                      positions.find((pos) => pos.name === "footerAd3")
                     )
                   }
                 >
@@ -321,6 +333,7 @@ const Layout = () => {
               title={modalTitle}
               onClose={() => setModalOpen(false)}
               positionId={currentPositionId}
+              position={currentPos}
             />
           </Modal>
           <Table mandalId={`5ffde92b6563fd34c467ede5`} />
